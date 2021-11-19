@@ -26,9 +26,9 @@ export default {
 
 <style lang="scss" scoped>
 .pj-form-item {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   &__label {
-    text-align: right;
+    text-align: left;
     vertical-align: middle;
     float: left;
     font-size: 14px;

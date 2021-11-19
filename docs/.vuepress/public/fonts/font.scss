@@ -1,4 +1,4 @@
-@import './iconfont.css';
+
 @font-face {
   font-family: 'iconfont'; /* Project id 2617113 */
   src: url('//at.alicdn.com/t/font_2617113_b9nike3vg86.eot?t=1626746162517'); /* IE9 */
@@ -13,7 +13,7 @@
       format('truetype'),
     url('//at.alicdn.com/t/font_2617113_b9nike3vg86.svg?t=1626746162517#iconfont')
       format('svg');
-  src: url('iconfont.ttf?t=1637208456551') format('truetype');
+  // src: url('iconfont.ttf?t=1637208456551') format('truetype');
 }
 [class*='cs-icon-'] {
   font-family: 'iconfont' !important;

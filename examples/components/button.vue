@@ -114,6 +114,7 @@ export default {
   /* disable style */
   &.is-disabled {
     cursor: no-drop;
+    opacity:.4;
   }
 }
 /* different type style */

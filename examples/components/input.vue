@@ -87,6 +87,7 @@ export default {
 </script>
 
 <style lang="scss">
+// @import '../assets/fonts/font.scss';
 .pj-input {
   width: 100%;
   position: relative;

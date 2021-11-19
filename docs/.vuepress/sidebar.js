@@ -13,6 +13,12 @@ module.exports = [
     children: [
         '/button/',
         '/input/',
+        '/radio/',
+        '/checkbox/',
+        '/switch/',
+        '/dialog/',
+        '/form/',
+        '/collapse/',
     ]
   }
 ]
