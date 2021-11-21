@@ -3,8 +3,8 @@
     <span class="pj-radio__input">
       <span class="pj-radio__inner"></span>
       <input
-        class="pj-radio__original"
         type="radio"
+        class="pj-radio__original"
         :value="label"
         :name="name"
         v-model="model"
@@ -12,7 +12,7 @@
     </span>
     <span class="pj-radio__label">
       <slot></slot>
-      <!-- 如果没有传内容，我们就把label当成内容 -->
+      <!-- 如果没有传内容，就把label当内容 -->
       <template v-if="!$slots.default">{{label}}</template>
     </span>
   </label>
@@ -21,27 +21,9 @@
 <script>
 export default {
   name: 'pjRadio',
-  // 需要提供一个计算属性 model
   inject: {
     RadioGroup: {
       default: ''
-    }
-  },
-  computed: {
-    model: {
-      get () {
-        // this.RadioGroup.value
-        return this.isGroup ? this.RadioGroup.value : this.value
-      },
-      set (value) {
-        // 触发父组件给当前组件注册的input事件
-        this.$emit('input', value)
-        this.isGroup ? this.RadioGroup.$emit('input', value) : this.$emit('input', value)
-      }
-    },
-    isGroup () {
-      // 用于判断radio是否被radioGroup所包裹
-      return !!this.RadioGroup
     }
   },
   props: {
@@ -53,6 +35,22 @@ export default {
     name: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    model: {
+      get () {
+        return this.isGroup ? this.RadioGroup.value : this.value
+      },
+      set (value) {
+        // 触发父组件给当前组件注册的input事件
+        this.$emit('input', value)
+        this.isGroup ? this.RadioGroup.$emit('input', value) : this.$emit('input', value)
+      }
+    },
+    isGroup () {
+      // 用于判断radio是否被radioGroup包裹
+      return !!this.RadioGroup // Boolean值
     }
   }
 }
@@ -72,8 +70,8 @@ export default {
   margin-right: 30px;
   -moz-user-select: none;
   -webkit-user-select: none;
-  -ms-user-select: none;
-  .pj-radio__input {
+  -moz-user-select: none;
+  &__input {
     white-space: nowrap;
     cursor: pointer;
     outline: none;
@@ -100,8 +98,8 @@ export default {
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%) scale(0);
-        transition: transform .15s ease-in;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.15s ease-in;
       }
     }
     .pj-radio__original {
@@ -121,14 +119,14 @@ export default {
     padding-left: 10px;
   }
 }
-
+// 选中的样式
 .pj-radio.is-checked {
   .pj-radio__input {
     .pj-radio__inner {
       border-color: #409eff;
-      background: #409eff;
+      background-color: #409eff;
       &:after {
-        transform: translate(-50%,-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }

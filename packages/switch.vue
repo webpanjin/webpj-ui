@@ -1,8 +1,8 @@
 <template>
-  <div class="pj-switch" :class="{'is-checked': value}" @click="handleClick">
+  <div class="pj-switch" :class="{'is-checked':value}" @click="handleClick">
     <input
-      class="pj-switch__input"
       type="checkbox"
+      class="pj-switch__input"
       :name="name"
       ref="input"
     >
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+// 在使用switch组件时，实质上是当成表单元素来使用的，因此可能会用到组件的name属性
+// 需要在switch组件添加一个checkbox，每当值改变时也需要设置checkbox的value值
 export default {
   name: 'pjSwitch',
   props: {
@@ -36,18 +38,14 @@ export default {
   methods: {
     async handleClick () {
       this.$emit('input', !this.value)
-      // 点击的时候，还需要修改背景色
-      // console.log(this.value)
-      // 等待value发生了改变，在setColor
-      // 数据修改后，等待DOM更新，在修改按钮的颜色
+      // 等待value发生了改变，再调用changeColor
       await this.$nextTick()
-      this.setColor()
+      this.changeColor()
       this.$refs.input.checked = this.value
     },
-    setColor () {
+    changeColor () {
       if (this.activeColor || this.inactiveColor) {
         const color = this.value ? this.activeColor : this.inactiveColor
-        // console.log(color)
         this.$refs.core.style.borderColor = color
         this.$refs.core.style.backgroundColor = color
       }
@@ -55,30 +53,22 @@ export default {
   },
   mounted () {
     // 修改开关的颜色
-    this.setColor()
-    // 控制checkbox的checkbox
+    this.changeColor()
+    // 控制checkbox的值
     this.$refs.input.checked = this.value
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pj-switch {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   position: relative;
   font-size: 14px;
   line-height: 20px;
-  height: 20px;
   vertical-align: middle;
-  .pj-switch__input {
-    position: absolute;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    margin: 0;
-  }
-  .pj-switch__core {
+  &__core {
     margin: 0;
     display: inline-block;
     position: relative;
@@ -90,27 +80,37 @@ export default {
     box-sizing: border-box;
     background: #dcdfe6;
     cursor: pointer;
-    transition: border-color .3s,background-color .3s;
+    transition: border-color 0.3s, background-color 0.3s;
     vertical-align: middle;
     .pj-switch__button {
       position: absolute;
       top: 1px;
       left: 1px;
       border-radius: 100%;
-      transition: all .3s;
+      transition: all 0.3s;
       width: 16px;
       height: 16px;
       background-color: #fff;
     }
   }
-}
-.pj-switch.is-checked {
-  .pj-switch__core {
-    border-color: #409eff;
-    background-color: #409eff;
-    .pj-switch__button {
-      transform: translateX(20px);
+  // checked style
+  &.is-checked {
+    .pj-switch__core {
+      border-color: #409eff;
+      background-color: #409eff;
+      .pj-switch__button {
+        transform: translateX(20px);
+      }
     }
   }
+}
+
+// hide input
+.pj-switch__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  margin: 0;
 }
 </style>

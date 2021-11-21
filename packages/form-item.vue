@@ -1,6 +1,6 @@
 <template>
   <div class="pj-form-item">
-    <label class="pj-form-item__label" :style="{width: this.Form.labelWidth}">{{label}}</label>
+    <label class="pj-form-item__label" :style="labelStyle">{{label}}</label>
     <div class="pj-form-item__content">
       <slot></slot>
     </div>
@@ -13,15 +13,22 @@ export default {
   props: {
     label: String
   },
-  inject: ['Form']
+  inject: ['Form'],
+  computed: {
+    labelStyle () {
+      return {
+        width: this.Form.labelWidth
+      }
+    }
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .pj-form-item {
-  margin-bottom: 25px;
-  .pj-form-item__label {
-    text-align: right;
+  margin-bottom: 20px;
+  &__label {
+    text-align: left;
     vertical-align: middle;
     float: left;
     font-size: 14px;
@@ -30,7 +37,7 @@ export default {
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
-  .pj-form-item__content {
+  &__content {
     line-height: 40px;
     position: relative;
     font-size: 14px;

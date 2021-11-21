@@ -12,7 +12,13 @@ import Switch from './switch'
 import CheckboxGroup from './checkbox-group'
 import Form from './form'
 import FormItem from './form-item'
-import './fonts/font.scss'
+import Collapse from './collapse'
+import CollapseItem from './collapse-item'
+import Arc from './arc'
+import Track from './track'
+import './assets/fonts/font.scss'
+import './assets/css/base.scss'
+import './assets/css/code.scss'
 
 // 存储组件列表
 const components = [
@@ -25,7 +31,11 @@ const components = [
   Switch,
   CheckboxGroup,
   Form,
-  FormItem
+  FormItem,
+  Collapse,
+  CollapseItem,
+  Arc,
+  Track
 ]
 const install = function (Vue) {
   // 全局注册所有的组件
