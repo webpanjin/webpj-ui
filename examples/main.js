@@ -16,6 +16,9 @@ import collapseItem from './components/collapse-item.vue'
 import collapse from './components/collapse.vue'
 import Icon from './components/icon.vue'
 import CodeBlock from './components/code-block.vue'
+
+import Arc from './components/arc.vue'
+import Track from './components/track.vue'
 Vue.config.productionTip = false
 Vue.component(Button.name, Button)
 Vue.component(Dialog.name, Dialog)
@@ -31,6 +34,9 @@ Vue.component(collapseItem.name, collapseItem)
 Vue.component(collapse.name, collapse)
 Vue.component(Icon.name, Icon)
 Vue.component(CodeBlock.name, CodeBlock)
+//about svg 
+Vue.component(Arc.name, Arc)
+Vue.component(Track.name, Track)
 
 new Vue({
   render: h => h(App)

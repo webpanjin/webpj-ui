@@ -11,14 +11,22 @@ module.exports = [
     title: '组件',
     collapsable: false, 
     children: [
-        '/button/',
-        '/input/',
-        '/radio/',
-        '/checkbox/',
-        '/switch/',
-        '/dialog/',
-        '/form/',
-        '/collapse/',
+      '/button/',
+      '/input/',
+      '/radio/',
+      '/checkbox/',
+      '/switch/',
+      '/dialog/',
+      '/form/',
+      '/collapse/',
+    ]
+  },
+  {
+    title: '可视化',
+    collapsable: false, 
+    children: [
+      '/arc/',
+      '/track/'
     ]
   }
 ]
