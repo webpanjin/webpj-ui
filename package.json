@@ -1,6 +1,6 @@
 {
   "name": "webpj-ui",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "private": false,
   "main":"dist/webpj-ui.umd.min.js",
   "author": {

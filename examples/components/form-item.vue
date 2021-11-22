@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'pjFormItem',
+  name: 'PjFormItem',
   props: {
     label: String
   },

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'pjRadioGroup',
+  name: 'PjRadioGroup',
   provide () {
     return {
       RadioGroup: this

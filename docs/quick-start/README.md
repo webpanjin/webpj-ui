@@ -25,7 +25,6 @@ new Vue({
 
 ### 按需引入
 如果你只希望引入部分组件，比如 Button，那么需要在 main.js 中写入以下内容：
-// TODO: 
 ```
 import Vue from 'vue';
 import webpjUi from 'webpj-ui';

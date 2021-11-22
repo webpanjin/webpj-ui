@@ -4906,11 +4906,23 @@ var code = __webpack_require__("bd3a");
 
 var components = [packages_button, dialog, input, packages_checkbox, packages_radio, radio_group, packages_switch, checkbox_group, packages_form, form_item, collapse, collapse_item, arc, track];
 
-var install = function install(Vue) {
-  // 全局注册所有的组件
-  components.forEach(function (item) {
-    Vue.component(item.name, item);
-  });
+var install = function install(Vue, options) {
+  if (options && options.components) {
+    //按需加载
+    var componentsPart = options.components;
+    componentsPart.forEach(function (componentsPartName) {
+      components.forEach(function (component) {
+        if (componentsPartName == component.name) {
+          Vue.component(component.name, component);
+        }
+      });
+    });
+  } else {
+    // 全局注册所有的组件
+    components.forEach(function (item) {
+      Vue.component(item.name, item);
+    });
+  }
 }; // 判断是否是直接引入文件,如果是，就不用调用 Vue.use()
 
 

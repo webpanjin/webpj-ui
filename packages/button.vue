@@ -20,7 +20,7 @@
 <script>
 
 export default {
-  name: 'pjButton',
+  name: 'PjButton',
   props: {
     type: {
       type: String,

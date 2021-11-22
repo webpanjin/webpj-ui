@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'pjRadio',
+  name: 'PjRadio',
   inject: {
     RadioGroup: {
       default: ''

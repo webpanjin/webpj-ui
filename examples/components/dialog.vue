@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'pjDialog',
+  name: 'PjDialog',
   props: {
     title: {
       type: String,

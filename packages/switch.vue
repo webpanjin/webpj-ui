@@ -16,7 +16,7 @@
 // 在使用switch组件时，实质上是当成表单元素来使用的，因此可能会用到组件的name属性
 // 需要在switch组件添加一个checkbox，每当值改变时也需要设置checkbox的value值
 export default {
-  name: 'pjSwitch',
+  name: 'PjSwitch',
   props: {
     value: {
       type: Boolean,

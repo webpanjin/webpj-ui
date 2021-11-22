@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'pjCheckboxGroup',
+  name: 'PjCheckboxGroup',
   props: {
     value: {
       type: Array

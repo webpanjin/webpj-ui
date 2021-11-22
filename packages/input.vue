@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'pjInput',
+  name: 'PjInput',
   data () {
     return {
       // 用于控制是否显示密码框

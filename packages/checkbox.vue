@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'pjCheckbox',
+  name: 'PjCheckbox',
   inject: {
     CheckboxGroup: {
       default: ''

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'pjForm',
+  name: 'PjForm',
   props: {
     model: {
       type: Object,
