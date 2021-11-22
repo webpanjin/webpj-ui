@@ -54,7 +54,7 @@ export default {
       input3:'可清空input',
       input4:'密码框',
       basicCode:`
-        <el-input v-model="input" placeholder="请输入内容"></el-input>
+        <pj-input v-model="input" placeholder="请输入内容"></pj-input>
         <script>
         export default {
           data() {
@@ -66,7 +66,7 @@ export default {
         ${'<'}/script>
       `.replace(/^ {8}/gm, '').trim(),
       disabledCode:`
-        <el-input v-model="input" disabled placeholder="请输入内容"></el-input>
+        <pj-input v-model="input" disabled placeholder="请输入内容"></pj-input>
         <script>
         export default {
           data() {
@@ -78,7 +78,7 @@ export default {
         ${'<'}/script>
       `.replace(/^ {8}/gm, '').trim(),
       clearableCode:`
-        <el-input v-model="input" clearable placeholder="请输入内容"></el-input>
+        <pj-input v-model="input" clearable placeholder="请输入内容"></pj-input>
         <script>
         export default {
           data() {
@@ -90,7 +90,7 @@ export default {
         ${'<'}/script>
       `.replace(/^ {8}/gm, '').trim(),
       showPasswordCode:`
-        <el-input v-model="input" showPassword placeholder="请输入内容"></el-input>
+        <pj-input v-model="input" showPassword placeholder="请输入内容"></pj-input>
         <script>
         export default {
           data() {

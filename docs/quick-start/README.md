@@ -28,14 +28,16 @@ new Vue({
 // TODO: 
 ```
 import Vue from 'vue';
-import {Button} from 'webpj-ui';
+import webpjUi from 'webpj-ui';
 import 'webpj-ui/lib/webpj-ui.css'
-Vue.use(webpjUi)
+Vue.use(webpjUi,{
+  components:[
+    'PjButton',
+    'PjInput'
+  ]
+})
 import App from './App.vue';
 export default {
     name: 'app',
-    components: {
-        'cw-button': Button,
-    }
 }
 ```
